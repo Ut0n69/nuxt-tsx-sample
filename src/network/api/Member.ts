@@ -1,5 +1,5 @@
 import { Store } from 'vuex'
-import { Ajax } from '@/network/Ajax.ts'
+import { Ajax } from '@/network/Ajax'
 import { AjaxRequest } from '@/network/AjaxRequest'
 import { AddMember } from '@/store/modules/Member/types'
 import { RootState } from '@/store/types'

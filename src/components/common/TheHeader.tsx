@@ -13,8 +13,8 @@ export default Vue.extend({
 const styles = {
   header: {
     width: '100%',
-    height: '120px',
-    lineHeight: '120px',
+    height: '95px',
+    lineHeight: '95px',
     paddingLeft: 'var(--space4)',
     background: 'var(--colorMain)'
   },

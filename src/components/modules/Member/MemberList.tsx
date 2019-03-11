@@ -1,13 +1,15 @@
 import Vue, { CreateElement, VNode } from 'vue'
 import MemberCard from './MemberCard'
+import { IMember } from '@/store/modules/Member/types'
 
 export default Vue.extend({
   components: {
     MemberCard
   },
-  data() {
-    return {
-      memberList: ['aaa', 'bbb', 'ccc']
+  computed: {
+    memberList() {
+      const memberState = this.$store.state.member
+      return memberState.list
     }
   },
   created() {},
@@ -15,8 +17,8 @@ export default Vue.extend({
     return (
       <section>
         <div style={styles.list}>
-          {this.memberList.map((name: string) => (
-            <MemberCard name={name} />
+          {this.memberList && this.memberList.map((member: IMember) => (
+            <MemberCard name={member.name.first} />
           ))}
         </div>
       </section>

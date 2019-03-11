@@ -1,5 +1,4 @@
 import Vue, { CreateElement, VNode } from 'vue'
-import { MemberApiClient } from '@/network/api/Member'
 
 export default Vue.extend({
   props: {
@@ -10,8 +9,6 @@ export default Vue.extend({
   },
   methods: {
     addItem() {
-      const memberApiClient = new MemberApiClient(this.$store)
-      memberApiClient.fetchMember()
     }
   },
   render(h: CreateElement): VNode {

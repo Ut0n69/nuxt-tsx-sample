@@ -1,32 +1,41 @@
 import Vue, { CreateElement, VNode } from 'vue'
-import MemberCard from './MemberCard'
 import { IMember } from '@/store/modules/Member/types'
 
 export default Vue.extend({
-  components: {
-    MemberCard
-  },
   computed: {
     memberList() {
       const memberState = this.$store.state.member
       return memberState.list
     }
   },
-  created() {},
   render(h: CreateElement): VNode {
     return (
-      <section>
-        <div style={styles.list}>
-          {this.memberList && this.memberList.map((member: IMember) => (
-            <MemberCard name={member.name.first} />
-          ))}
-        </div>
-      </section>
+      <div style={styles.list}>
+        {this.memberList && this.memberList.map((member: IMember) => (
+          <div style={styles.card}>
+            <img style={styles.image} src={member.picture.large}/>
+            <h1 style={styles.name}>{member.name.first}</h1>
+            <nuxt-link 
+              to={{ 
+                path: 'detail', 
+                query: { id: member.id.value }
+              }}
+              tag='button'
+              style={styles.button}
+            >
+              About Me
+            </nuxt-link>
+          </div>
+        ))}
+      </div>
     )
   }
 })
 
 const styles = {
+  name: {
+    fontSize: 'var(--h1)'
+  },
   list: {
     maxWidth: '1024px',
     margin: 'var(--space4) auto',
@@ -39,8 +48,20 @@ const styles = {
   card: {
     textAlign: 'center',
     width: '100%',
-    height: '380px',
     background: '#fff',
-    border: '5px solid var(--colorMain)'
+    border: '15px solid var(--colorMain)',
+    borderBottom: '5px solid var(--colorMain)'
+  },
+  image: {
+    borderRadius: '50%',
+    marginTop: '15px'
+  },
+  button: {
+    width: '100%',
+    height: '50px',
+    fontSize: 'var(--font2)',
+    background: 'var(--colorMain)',
+    border: 0,
+    marginTop: '15px'
   }
 }

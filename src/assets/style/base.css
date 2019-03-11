@@ -11,10 +11,10 @@
   --space8: calc(var(--spaceBase) * 8);
 
   --fontBase: 8px;
-  --font1: var(--fontVase);
-  --font2: calc(var(--fontVase) * 2);
-  --font4: calc(var(--fontVase) * 4);
-  --font8: calc(var(--fontVase) * 8);
+  --font1: var(--fontBase);
+  --font2: calc(var(--fontBaseVase) * 2);
+  --font4: calc(var(--fontBase) * 4);
+  --font8: calc(var(--fontBase) * 8);
 }
 
 body {

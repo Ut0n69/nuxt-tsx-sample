@@ -1,1 +1,1 @@
-export const FETCH_MEMBER_COUNT = 3
+export const FETCH_MEMBER_COUNT = 6

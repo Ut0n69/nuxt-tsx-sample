@@ -1,6 +1,6 @@
 # nuxt-playground
 
-WIP
+Nuxt.js + TypeScript(TSX)
 
 ## Build Setup
 

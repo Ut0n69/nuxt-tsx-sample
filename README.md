@@ -1,4 +1,4 @@
-# nuxt-playground
+# nuxt-tsx-sample
 
 Nuxt.js + TypeScript(TSX)
 

@@ -5,7 +5,7 @@ import ErrorService from '@/services/ErrorService'
 export class Ajax {
   static shared = new Ajax()
 
-  baseURL: string = ''
+  baseURL: string = 'https://randomuser.me/api'
   timeout: number = 10 * 1000
 
   get<T>(request: AjaxRequest): Promise<T> {

@@ -16,9 +16,9 @@ export default Vue.extend({
             <div style={styles.card}>
               <img style={styles.image} src={member.picture.large}/>
               <h1 style={styles.name}>{member.name.first}</h1>
-              <nuxt-link 
-                to={{ 
-                  path: 'detail', 
+              <nuxt-link
+                to={{
+                  path: 'detail',
                   query: { id: member.id.value }
                 }}
                 tag='button'

@@ -1,7 +1,9 @@
 <template>
   <div>
     <TheHeader />
-    <nuxt />
+    <transition mode="out-in" name="slideQuad">
+      <nuxt />
+    </transition>
   </div>
 </template>
 
@@ -24,3 +26,19 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style scoped>
+.slideQuad-enter-active {
+  transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.slideQuad-leave-active {
+  transition: all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.slideQuad-enter,
+.slideQuad-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
+</style>

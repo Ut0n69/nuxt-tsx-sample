@@ -12,14 +12,14 @@ export default Vue.extend({
     return (
       <div style={styles.list}>
         {this.memberList.length === 6
-          ? this.memberList.map((member: IMember) => (
+          ? this.memberList.map((member: IMember, index: number) => (
             <div style={styles.card}>
               <img style={styles.image} src={member.picture.large}/>
               <h1 style={styles.name}>{member.name.first}</h1>
               <nuxt-link
                 to={{
                   path: 'detail',
-                  query: { id: member.id.value }
+                  query: { id: index }
                 }}
                 tag='button'
                 style={styles.button}
